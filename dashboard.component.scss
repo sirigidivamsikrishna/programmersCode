@@ -1,0 +1,84 @@
+.mainDivision {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.mainTextLink {
+  list-style-type: none;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  // color: white;
+  cursor: pointer;
+  background-color: rgb(50, 49, 49);
+  border: 1px solid rgb(86, 85, 85);
+}
+.codeAnswer {
+  max-width: 900px;
+  min-width: 900px;
+  border-radius: 5px;
+  border: 1px solid rgb(26, 25, 25);
+  color: white;
+  white-space: pre-wrap;
+  padding: 20px;
+  font-size: 20px;
+  background-color: rgb(50, 49, 49);
+}
+li.active {
+  background-color: red;
+}
+::ng-deep {
+  .p-inputtext {
+    padding: 20px;
+    background-color:rgb(50, 49, 49);
+    color: WHITE;
+  }
+  .p-inputtext:enabled:hover {
+    border-color:#ced4da;
+  }
+
+  .p-inputtext:enabled:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none !important;
+    border-color:#ced4da
+  }
+  .p-button {
+    background-color:rgb(50, 49, 49);
+    color: white;
+    min-width: 120px;
+    font-size: 18px;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+  }
+  .p-button:focus {
+    box-shadow: none !important;
+  }
+  .p-button:enabled:hover {
+    background-color:rgb(50, 49, 49);
+    color: #ffffff;
+    border-color: rgb(62 58 58);
+  }
+   input:-webkit-autofill,
+   input:-webkit-autofill:hover,
+   input:-webkit-autofill:focus,
+   input:-webkit-autofill:active {
+       -webkit-box-shadow: 0 0 0 30px rgb(50, 49, 49) inset !important;
+   }
+
+   input:-webkit-autofill {
+       -webkit-text-fill-color: rgb(255, 255, 255) !important;
+   }
+
+   input:-webkit-autofill,
+   input:-webkit-autofill:hover,
+   input:-webkit-autofill:focus,
+   input:-webkit-autofill:active {
+       -webkit-box-shadow: 0 0 0 30px rgb(50, 49, 49)inset !important;
+       transition: background-color 5000s ease-in-out 0s;
+       -webkit-text-fill-color: #fff !important;
+   }
+}
+
+

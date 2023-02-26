@@ -1,0 +1,95 @@
+<div style="display: flex; justify-content: center; align-items: center">
+  <br /><br />
+
+  <input
+    style="height: 70px; width: 705px; font-size: 20px; max-width: 100%"
+    id="inputBox"
+    (keydown.enter)="generateFunction()"
+    type="text"
+    pInputText
+    placeholder="Ask your code which code you want and specify its language"
+    [(ngModel)]="writtenInputValue"
+  />
+  &nbsp;&nbsp;&nbsp;
+  <button
+    (click)="generateFunction()"
+    pButton
+    type="submit"
+    id="submitBTN"
+    label="Generate"
+  ></button>
+</div>
+<div *ngIf="invalidCode">
+  <div style="text-align: center; color: white; font-size: 20px">
+    <p>Please Ask Valid Code</p>
+  </div>
+</div>
+<br /><br />
+<div style="display: flex; justify-content: center" *ngIf="responceText">
+  <div style="min-width: 900px; color: white; font-size: 20px">
+    Here is your Code:
+  </div>
+  <br /><br />
+</div>
+<div style="display: flex; justify-content: center" *ngIf="responceText">
+  <div>
+    <div class="codeAnswer">
+      <pre style="white-space: pre-wrap; margin-top: 0px">
+  
+        {{ responceText }}</pre
+      >
+    </div>
+    <br />
+    <div style="text-align: center">
+      <button pButton (click)="explainFunction()">Explain</button> &nbsp;&nbsp;
+      <button pButton (click)="QAns()">Q/A</button>
+    </div>
+    <br /><br />
+  </div>
+</div>
+<div
+  style="display: flex; justify-content: center; align-items: center"
+  *ngIf="questionAndAnswersDiv"
+>
+  <br />
+  <input
+    style="height: 70px; width: 705px; max-width: 100%; font-size: 20px"
+    type="text"
+    pInputText
+    placeholder="Ask your question related to above code"
+    (keydown.enter)="askQuestions()"
+    [(ngModel)]="questionsValue"
+  />
+  &nbsp;&nbsp;&nbsp;
+  <button (click)="askQuestions()" pButton type="submit" label="Ask"></button>
+</div>
+<br /><br />
+<div style="display: flex; justify-content: center" *ngIf="explainedText">
+  <div style="min-width: 900px; color: white; font-size: 20px">
+    Here is your Responce:
+  </div>
+  <br /><br />
+</div>
+<div *ngIf="explainedText">
+  <div style="display: flex; justify-content: center">
+    <div>
+      <div class="codeAnswer">
+        <pre style="white-space: pre-wrap; margin-top: 0px">{{
+          explainedText
+        }}</pre>
+      </div>
+    </div>
+  </div>
+  <br /><br /><br />
+</div>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-clip-rotate"
+  [fullScreen]="true"
+  ><p style="color: white; font-size: 20px">
+    Please wait a bit longer...
+  </p></ngx-spinner
+>
