@@ -32,7 +32,10 @@ export class DashboardComponent implements OnInit {
       this.invalidCode = false;
       this.spin.show();
       this.explainedText = '';
-      let input = 'write a code for' + this.writtenInputValue;
+      let input =
+        'write a code for' +
+        this.writtenInputValue +
+        ',note:answer if it a coding related question';
       this.service.responce(input).then((res) => {
         this.spin.hide();
         this.responceText = res['data'].choices[0].text;
@@ -57,6 +60,7 @@ export class DashboardComponent implements OnInit {
     });
   }
   explainFunction() {
+    this.questionsValue = '';
     this.spin.show();
     this.questionAndAnswersDiv = false;
     let input =
